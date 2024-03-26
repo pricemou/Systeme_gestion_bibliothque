@@ -44,6 +44,7 @@ public class Main {
         scanner.nextLine(); // Pour consommer la nouvelle ligne
         switch (choixMethode) {
             case 1:
+                a 
                 // Implémenter la recherche linéaire avec une liste chaînée
                 // Appel à une méthode dédiée
                 break;
