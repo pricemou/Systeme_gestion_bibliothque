@@ -7,7 +7,6 @@ class Livre {
     String auteur;
     String ISBN;
     boolean disponible;
-    boolean b = false;
 
     public Livre(int id, String titre, String auteur, String ISBN) {
         this.id = id;
