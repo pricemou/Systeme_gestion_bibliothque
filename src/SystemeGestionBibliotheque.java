@@ -11,6 +11,7 @@ public static void main(String[]args){
       System.out.println("2. Rechercher un livre");
       System.out.println("3. Emprunter un livre");
       System.out.println("4. Retourner un livre");
+      //System.out.println("5. Voir la disponibilité d'un livre");
       System.out.println("0. Quitter");
       System.out.println("Votre choix:");
       choix = sc.nextInt();

@@ -1,6 +1,6 @@
 
 
-// Définition de la classe Livre
+// Définition de la classe Livre et ses attributs
 class Livre {
   // private  int id; -- Je pense qu'on peut utiliser l'ISBN pour identifier de façon unique chaque livre pas besoin d'un identifiant
     private String titre;
@@ -8,6 +8,7 @@ class Livre {
     private String ISBN;
    private  boolean disponible;
 
+   // Constructeur
     public Livre(int id, String titre, String auteur, String ISBN) {
        // this.id = id;
         this.titre = titre;
@@ -16,6 +17,7 @@ class Livre {
         this.disponible = true;
     }
 // Les accesseurs et mutateurs
+
   /*  public int getId() {
         return id;
     }
@@ -31,10 +33,6 @@ class Livre {
         return ISBN;
     }
 
-    /* public boolean isDisponible() {
-       // return disponible;
-    }
-    */
 
 /*    public void setId(int id) {
         this.id = id;
@@ -52,9 +50,15 @@ class Livre {
         this.ISBN = ISBN;
     }
 
-   /* public void setDisponible(boolean disponible) {
-        this.disponible = disponible;
-    }
-    */
 
+    // Méthode toString
+    @Override
+    public String toString() {
+        return "Livre{" +
+                "titre='" + titre + '\'' +
+                ", auteur='" + auteur + '\'' +
+                ", ISBN='" + ISBN + '\'' +
+                ", disponible=" + disponible +
+                '}';
+    }
 }
