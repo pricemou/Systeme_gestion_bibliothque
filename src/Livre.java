@@ -9,7 +9,7 @@ class Livre {
    private  boolean disponible;
 
    // Constructeur
-    public Livre(int id, String titre, String auteur, String ISBN) {
+    public Livre(String titre, String auteur, String ISBN) {
        // this.id = id;
         this.titre = titre;
         this.auteur = auteur;
@@ -33,11 +33,14 @@ class Livre {
         return ISBN;
     }
 
-
-/*    public void setId(int id) {
-        this.id = id;
+    public boolean estDisponible() {
+        return disponible;
     }
-*/
+
+    /*    public void setId(int id) {
+            this.id = id;
+        }
+    */
     public void setTitre(String titre) {
         this.titre = titre;
     }
@@ -50,6 +53,9 @@ class Livre {
         this.ISBN = ISBN;
     }
 
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
 
     // Méthode toString
     @Override
