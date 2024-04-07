@@ -1,5 +1,18 @@
 import java.util.*;
 public class SystemeGestionBibliotheque {
+
+    //Méthode pour afficher le menu principal
+    public static void afficherMenuPrincipal() {
+        System.out.println("--------------------------------------------------------------------------------------\n");
+        System.out.println("\t\t\t\tBienvenue dans notre bibliothèque! \n");
+        System.out.println("--------------------------------------------------------------------------------------\n");
+        System.out.println("\nMenu:");
+        System.out.println("1. Ajouter un livre");
+        System.out.println("2. Rechercher un livre");
+        System.out.println("3. Emprunter un livre");
+        System.out.println("4. Retourner un livre");
+        System.out.println("0. Quitter");
+    }
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -39,16 +52,6 @@ public class SystemeGestionBibliotheque {
         sc.close();
     }
 
-    //Méthode pour afficher le menu principal
-    public static void afficherMenuPrincipal() {
-        System.out.println("\nMenu:");
-        System.out.println("1. Ajouter un livre");
-        System.out.println("2. Rechercher un livre");
-        System.out.println("3. Emprunter un livre");
-        System.out.println("4. Retourner un livre");
-        System.out.println("0. Quitter");
-    }
-
     //Méthode pour afficher le sous menu des différentes types de recherche
     public static void afficherSousMenuRecherche(Scanner sc) {
         System.out.println("\nSous-menu de recherche :");
@@ -56,6 +59,7 @@ public class SystemeGestionBibliotheque {
         System.out.println("2. Recherche binaire (pour les bibliothèques triées par titre ou par auteur)");
         System.out.println("3. Recherche dans un arbre binaire (pour les bibliothèques organisées par catégorie ou genre)");
         System.out.println("4. Utilisation d'une table de hachage (pour des recherches rapides basées sur l'ISBN ou d'autres identifiants uniques)");
+        System.out.println("5. Retour au menu principal");
         System.out.print("Votre choix : ");
 
         int choixMethode = sc.nextInt();
@@ -73,6 +77,9 @@ public class SystemeGestionBibliotheque {
                 break;
             case 4:
                 // Appel à une méthode recherche table de hachage
+                break;
+            case 5:
+                //
                 break;
             default:
                 System.out.println("Choix invalide. Veuillez réessayer.");
