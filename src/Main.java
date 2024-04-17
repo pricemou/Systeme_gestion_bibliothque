@@ -181,16 +181,17 @@ public class Main {
 
     public static void emprunterLivreParNom(Library library, Scanner scanner) {
         System.out.println("\nEmprunter un livre par son nom :");
-        System.out.print("Entrez le nom du livre : ");
-        String nomLivre = scanner.nextLine();
         System.out.print("Entrez le nom de l'emprunteur : ");
         String nomEmprunteur = scanner.nextLine();
+        System.out.print("Entrez le nom du livre : ");
+        String nomLivre = scanner.nextLine();
         if (library.emprunterLivreParNom(nomLivre, nomEmprunteur)) {
             System.out.println("Livre emprunté avec succès par " + nomEmprunteur);
         } else {
-            System.out.println("Livre non trouvé ou non disponible.");
+            System.out.println("Le livre n'a pas pu être emprunté.");
         }
     }
+    
 
     public static void rendreLivre(Library library, Scanner scanner) {
         System.out.println("\nRendre un livre :");
