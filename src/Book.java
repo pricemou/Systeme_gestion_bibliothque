@@ -34,7 +34,18 @@ public class Book {
         return auteur;
     }
 
+    // Méthode pour obtenir l'ISBN du livre
     public String getIsbn() {
         return ISBN;
+    }
+
+    // Méthode pour obtenir l'ID du livre
+    public int getId(){
+        return id;
+    }
+
+    // Méthode pour vérifier si le livre est disponible
+    public boolean isDisponible() {
+        return disponible;
     }
 }

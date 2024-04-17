@@ -53,6 +53,7 @@ public class Main {
         scanner.close();
     }
 
+    // Méthode pour ajouter des livres par défaut à la bibliothèque et à l'arbre binaire
     public static void ajouterLivresParDefaut(Library library, BinaryTree binaryTree) {
         library.ajouterLivre(1, "Le seigneur des anneaux", "J.R.R. Tolkien", "9782075061386", "Fantasy");
         library.ajouterLivre(2, "Harry Potter", "J.K. Rowling", "9782070643028", "Fantasy");
@@ -71,6 +72,7 @@ public class Main {
         }
     }
 
+    // Méthode pour afficher le menu de recherche
     public static void afficherMenuRecherche(Library library, Scanner scanner, BinaryTree binaryTree) {
         System.out.println("\nMéthodes de recherche :");
         System.out.println("1. Recherche linéaire avec liste chaînée (pour les petites bibliothèques)");
@@ -85,25 +87,22 @@ public class Main {
         switch (choixMethode) {
             case 1:
                 rechercherLivre(library, scanner);
-                // Appel à une méthode dédiée
                 break;
             case 2:
-                // Appel à une méthode dédiée
                 rechercherLivreBinaire(library, scanner);
                 break;
             case 3:
                 rechercherParCategorie(library, scanner, binaryTree);
-                // Appel à une méthode dédiée
                 break;
             case 4:
                 rechercherParISBN(library, scanner);
-                // Appel à une méthode dédiée
                 break;
             default:
                 System.out.println("Choix invalide. Veuillez réessayer.");
         }
     }
 
+    // Méthode pour ajouter un livre à la bibliothèque
     public static void ajouterLivre(Library library, Scanner scanner) {
         System.out.println("\nAjouter un livre :");
         // Demander les détails du livre à l'utilisateur
@@ -123,6 +122,7 @@ public class Main {
         library.ajouterLivre(id, titre, auteur, isbn, categorie); // Passer la catégorie en paramètre
     }
 
+    // Méthode pour rechercher un livre par titre
     public static void rechercherLivre(Library library, Scanner scanner) {
         System.out.println("\nRechercher un livre par son titre :");
         System.out.print("Entrez le titre du livre : ");
@@ -135,6 +135,7 @@ public class Main {
         }
     }
 
+    // Méthode pour rechercher un livre par titre avec recherche binaire
     public static void rechercherLivreBinaire(Library library, Scanner scanner) {
         System.out.println("\nRechercher un livre par son titre (recherche binaire) :");
         System.out.print("Entrez le titre du livre : ");
@@ -147,7 +148,7 @@ public class Main {
         }
     }
 
-    // Méthode pour rechercher un livre par catégorie dans l'arbre binaire
+    // Méthode pour rechercher un livre par catégorie
     public static void rechercherParCategorie(Library library, Scanner scanner, BinaryTree binaryTree) {
         System.out.println("\nRechercher un livre par catégorie :");
         System.out.print("Entrez la catégorie du livre : ");
@@ -165,7 +166,8 @@ public class Main {
         }
     }
 
-    public static void  rechercherParISBN(Library library, Scanner scanner) {
+    // Méthode pour rechercher un livre par ISBN
+    public static void rechercherParISBN(Library library, Scanner scanner) {
         System.out.println("\nRechercher un livre par ISBN :");
         System.out.print("Entrez l'ISBN du livre : ");
         String isbn = scanner.nextLine();
@@ -179,6 +181,7 @@ public class Main {
         }
     }
 
+    // Méthode pour emprunter un livre par son nom
     public static void emprunterLivreParNom(Library library, Scanner scanner) {
         System.out.println("\nEmprunter un livre par son nom :");
         System.out.print("Entrez le nom de l'emprunteur : ");
@@ -191,8 +194,8 @@ public class Main {
             System.out.println("Le livre n'a pas pu être emprunté.");
         }
     }
-    
 
+    // Méthode pour rendre un livre
     public static void rendreLivre(Library library, Scanner scanner) {
         System.out.println("\nRendre un livre :");
         System.out.print("Entrez le titre du livre : ");

@@ -28,13 +28,23 @@ class Library {
     }
 
     // Méthode pour afficher les livres de la bibliothèque
+
     public void afficherLivres() {
+        // Tri des livres par ID
+        Collections.sort(livres, new Comparator<Book>() {
+            @Override
+            public int compare(Book book1, Book book2) {
+                return Integer.compare(book1.getId(), book2.getId());
+            }
+        });
+        
         System.out.println("\nListe des livres dans la bibliothèque :\n");
         System.out.printf("%-5s%-30s%-30s%-15s%-15s%-10s\n", "ID", "Titre", "Auteur", "ISBN", "Catégorie", "Disponible");
         for (Book livre : livres) {
-            System.out.printf("%-5d%-30s%-30s%-15s%-15s%-10s\n", livre.id, livre.titre, livre.auteur, livre.ISBN, livre.getCategorie(), (livre.disponible ? "Oui" : "Non"));
+            System.out.printf("%-5d%-30s%-30s%-15s%-15s%-10s\n", livre.getId(), livre.getTitre(), livre.getAuteur(), livre.getIsbn(), livre.getCategorie(), (livre.isDisponible() ? "Oui" : "Non"));
         }
     }
+
 
     // Méthode pour rechercher un livre par titre dans la bibliothèque
     public Book rechercherParTitre(String titre) {
