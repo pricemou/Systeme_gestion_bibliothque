@@ -8,7 +8,6 @@ public class Main {
         Library library = new Library();
         BinaryTree binaryTree = new BinaryTree(); // Création de l'arbre binaire
 
-
         // Ajout des livres par défaut
         ajouterLivresParDefaut(library, binaryTree);
 
@@ -34,7 +33,7 @@ public class Main {
                     library.afficherLivres();
                     break;
                 case 3:
-                    afficherMenuRecherche(library,scanner,binaryTree );
+                    afficherMenuRecherche(library, scanner, binaryTree);
                     break;
                 case 4:
                     emprunterLivreParNom(library, scanner);
@@ -71,14 +70,15 @@ public class Main {
             binaryTree.insert(book);
         }
     }
-    
 
-    public static void afficherMenuRecherche(Library library,Scanner scanner,BinaryTree binaryTree ) {
+    public static void afficherMenuRecherche(Library library, Scanner scanner, BinaryTree binaryTree) {
         System.out.println("\nMéthodes de recherche :");
         System.out.println("1. Recherche linéaire avec liste chaînée (pour les petites bibliothèques)");
         System.out.println("2. Recherche binaire (pour les bibliothèques triées par titre ou par auteur)");
-        System.out.println("3. Recherche dans un arbre binaire (pour les bibliothèques organisées par catégorie ou genre)");
-        System.out.println("4. Utilisation d'une table de hachage (pour des recherches rapides basées sur l'ISBN ou d'autres identifiants uniques)");
+        System.out.println(
+                "3. Recherche dans un arbre binaire (pour les bibliothèques organisées par catégorie ou genre)");
+        System.out.println(
+                "4. Utilisation d'une table de hachage (pour des recherches rapides basées sur l'ISBN ou d'autres identifiants uniques)");
         System.out.print("Votre choix : ");
         int choixMethode = scanner.nextInt();
         scanner.nextLine(); // Pour consommer la nouvelle ligne
@@ -92,7 +92,7 @@ public class Main {
                 rechercherLivreBinaire(library, scanner);
                 break;
             case 3:
-                rechercherParCategorie(library,scanner,binaryTree); 
+                rechercherParCategorie(library, scanner, binaryTree);
                 // Appel à une méthode dédiée
                 break;
             case 4:
@@ -118,7 +118,7 @@ public class Main {
         String isbn = scanner.nextLine();
         System.out.print("Catégorie : ");
         String categorie = scanner.nextLine(); // Demander la catégorie
-    
+
         // Ajouter le livre à la bibliothèque
         library.ajouterLivre(id, titre, auteur, isbn, categorie); // Passer la catégorie en paramètre
     }
@@ -165,12 +165,11 @@ public class Main {
         }
     }
 
-
-    public static void rechercherParISBN(Library library, Scanner scanner) {
+    public static void  rechercherParISBN(Library library, Scanner scanner) {
         System.out.println("\nRechercher un livre par ISBN :");
         System.out.print("Entrez l'ISBN du livre : ");
         String isbn = scanner.nextLine();
-    
+
         // Rechercher le livre par son ISBN
         Book livreTrouve = library.rechercherParISBN(isbn);
         if (livreTrouve != null) {
@@ -179,7 +178,6 @@ public class Main {
             System.out.println("Aucun livre trouvé avec l'ISBN spécifié.");
         }
     }
-
 
     public static void emprunterLivreParNom(Library library, Scanner scanner) {
         System.out.println("\nEmprunter un livre par son nom :");
@@ -193,7 +191,6 @@ public class Main {
             System.out.println("Livre non trouvé ou non disponible.");
         }
     }
-
 
     public static void rendreLivre(Library library, Scanner scanner) {
         System.out.println("\nRendre un livre :");

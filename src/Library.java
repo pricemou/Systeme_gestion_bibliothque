@@ -1,24 +1,23 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashMap;
+import java.util.Hashtable;
 
 class Library {
     private List<Book> livres;
-    private Map<String, Book> isbnMap; 
+    private Hashtable<String, Book> isbnHashtable; 
 
     public Library() {
         this.livres = new ArrayList<>();
-        this.isbnMap = new HashMap<>();
+        this.isbnHashtable = new Hashtable<>();
     }
 
     // Méthode pour ajouter un livre à la bibliothèque
     public void ajouterLivre(int id, String titre, String auteur, String isbn, String categorie) {
         Book livre = new Book(id, titre, auteur, isbn, categorie); // Ajoutez la catégorie lors de la création du livre
         livres.add(livre);
-        isbnMap.put(isbn, livre); // Ajouter une entrée dans la table de hachage
+        isbnHashtable.put(isbn, livre);; // Ajouter une entrée dans la table de hachage
         Collections.sort(livres, Comparator.comparing(Book::getTitre));
         System.out.println("Livre ajouté avec succès à la bibliothèque !");
     }
@@ -76,7 +75,7 @@ class Library {
     }
 
     public Book rechercherParISBN(String isbn) {
-        return isbnMap.get(isbn); // Rechercher le livre par son ISBN dans la table de hachage
+        return isbnHashtable.get(isbn); // Rechercher le livre par son ISBN dans la table de hachage
     }
 
     public boolean emprunterLivreParNom(String nomLivre, String nomEmprunteur) {
