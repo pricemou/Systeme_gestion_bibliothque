@@ -1,56 +1,68 @@
+// MEMBRES DU GROUPE
+// Yann Epiphane Djeredou
+// Fromon Claude Pricemou
+// Cherlie Rivage
+
+
+
 import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Interface utilisateur
-        Scanner scanner = new Scanner(System.in);
-        Library library = new Library();
-        BinaryTree binaryTree = new BinaryTree(); // Création de l'arbre binaire
+        try {
+            // Interface utilisateur
+            Scanner scanner = new Scanner(System.in);
+            Library library = new Library();
+            BinaryTree binaryTree = new BinaryTree(); // Création de l'arbre binaire
 
-        // Ajout des livres par défaut
-        ajouterLivresParDefaut(library, binaryTree);
+            // Ajout des livres par défaut
+            ajouterLivresParDefaut(library, binaryTree);
 
-        int choix;
+            int choix;
 
-        do {
-            System.out.println("\nBienvenue dans la bibliothèque !");
-            System.out.println("1. Ajouter un livre");
-            System.out.println("2. Afficher les livres");
-            System.out.println("3. Rechercher un livre");
-            System.out.println("4. Emprunter un livre");
-            System.out.println("5. Rendre un livre");
-            System.out.println("0. Quitter");
-            System.out.print("Votre choix : ");
-            choix = scanner.nextInt();
-            scanner.nextLine(); // Pour consommer la nouvelle ligne
+            do {
+                System.out.println("\nBienvenue dans la bibliothèque !");
+                System.out.println("1. Ajouter un livre");
+                System.out.println("2. Afficher les livres");
+                System.out.println("3. Rechercher un livre");
+                System.out.println("4. Emprunter un livre");
+                System.out.println("5. Rendre un livre");
+                System.out.println("0. Quitter");
+                System.out.print("Votre choix : ");
+                choix = scanner.nextInt();
+                scanner.nextLine(); // Pour consommer la nouvelle ligne
 
-            switch (choix) {
-                case 1:
-                    ajouterLivre(library, scanner);
-                    break;
-                case 2:
-                    library.afficherLivres();
-                    break;
-                case 3:
-                    afficherMenuRecherche(library, scanner, binaryTree);
-                    break;
-                case 4:
-                    emprunterLivreParNom(library, scanner);
-                    break;
-                case 5:
-                    rendreLivre(library, scanner);
-                    break;
-                case 0:
-                    System.out.println("Merci d'avoir utilisé notre bibliothèque !");
-                    break;
-                default:
-                    System.out.println("Choix invalide. Veuillez réessayer.");
-            }
-        } while (choix != 0);
+                switch (choix) {
+                    case 1:
+                        ajouterLivre(library, scanner);
+                        break;
+                    case 2:
+                        library.afficherLivres();
+                        break;
+                    case 3:
+                        afficherMenuRecherche(library, scanner, binaryTree);
+                        break;
+                    case 4:
+                        emprunterLivreParNom(library, scanner);
+                        break;
+                    case 5:
+                        rendreLivre(library, scanner);
+                        break;
+                    case 0:
+                        System.out.println("Merci d'avoir utilisé notre bibliothèque !");
+                        break;
+                    default:
+                        System.out.println("Choix invalide. Veuillez réessayer.");
+                }
+            } while (choix != 0);
 
-        // Fermeture du scanner
-        scanner.close();
+            // Fermeture du scanner
+            scanner.close();
+        } catch (Exception e) {
+            System.out.println("Une erreur s'est produite : " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     // Méthode pour ajouter des livres par défaut à la bibliothèque et à l'arbre binaire
